@@ -78,9 +78,9 @@ class ViewController: UIViewController {
             res = String(nu1 - nu2)
         }
         else if (op == "x") {
-            let ok = Int.multiplyWithOverflow(nu1, nu2)
-            if (!ok.overflow) {
-                res = String(ok.0)
+            let (ok, nb)  : (Int, Bool) = Int.multiplyWithOverflow(nu1, nu2)
+            if (ok) {
+                res = String(nb)
             }
 //            res = String(nu1 * nu2)
         }
